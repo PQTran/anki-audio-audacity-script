@@ -1,0 +1,8 @@
+Import2:Filename="/Users/ptran/Music/macro-input/anki.mp3"
+LabelSounds:measurement="peak" post-offset="0" pre-offset="0" sil-dur="0.4" snd-dur="0.4" text="Sound" threshold="-25" type="around"
+NyquistPrompt:Command=";nyquist plug-in\n;version 4\n;type tool\n;name \"Clip label\"\n;author \"Paul Tran\"\n;release 2.3.1\n;copyright \"Released under terms of the GNU General Public License version 2\"\n\n(setf trim-buffer 0.3)\n\n(defun select (start end)\n  (aud-do (format nil \"Select:Start=~a End=~a Mode=Set\" start end)))\n\n\n(defun get-last-region (labels)\n  (let ((last-label (nth (1- (length labels)) labels)))\n;    (print last-label)\n    (list (- (first last-label) trim-buffer)\n           (+ (second last-label) trim-buffer))))\n\n(setf labels (second (first (aud-get-info \"Labels\"))))\n(setf region (get-last-region labels))\n(select (first region) (second region))\n\n\n" Parameters=""
+Trim:
+Align_StartToZero:
+ExportMp3:
+SelectAll:
+RemoveTracks:
