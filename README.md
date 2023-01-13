@@ -14,5 +14,5 @@ This script is used to batch crop the last audio section of mp3 files. My motiva
 * Import Audacity macro: `Anki Script.txt`
 
 ## Running
-* Execute `python scripts/anki-media.py`
+* Execute `python anki-media.py`
 * All cropped audio can be found at `TARGET_DIR`
